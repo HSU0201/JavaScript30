@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Array Cardio 💪💪</title>
+    <link rel="icon" href="https://fav.farm/🔥" />
+  </head>
+  <body>
+    <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+    <script>
+      // ## Array Cardio Day 2
+
+      const people = [
+        { name: "Wes", year: 1988 },
+        { name: "Kait", year: 1986 },
+        { name: "Irv", year: 1970 },
+        { name: "Lux", year: 2015 },
+      ];
+
+      const comments = [
+        { text: "Love this!", id: 523423 },
+        { text: "Super good", id: 823423 },
+        { text: "You are the best", id: 2039842 },
+        { text: "Ramen is my fav food ever", id: 123523 },
+        { text: "Nice Nice Nice!", id: 542328 },
+      ];
+
+      //Array.prototype.some() //至少有一個人年滿 19 歲？
+      const isAdult = people.some(
+        (person) => new Date().getFullYear() - person.year >= 19
+      );
+      console.log("至少有一個人年滿 19 歲？", isAdult);
+
+      //Array.prototype.every() //每個人都年滿 19 歲嗎？
+
+      const allAdult = people.every(
+        (person) => new Date().getFullYear() - person.year >= 19
+      );
+      console.log("每個人都年滿 19 歲嗎？", allAdult);
+
+      //Array.prototype.find()
+      //Find 就像過濾器，但只傳回您要找的內容
+      //找到ID為823423的評論
+
+      const findText = comments.find((comment) => comment.id === 823423);
+      console.log("找到ID為823423的評論", findText);
+
+      //Array.prototype.findIndex()
+      //找到該ID的評論索引
+      const findIndex = comments.findIndex((comment) => comment.id === 823423);
+      console.log("找到ID為823423的的索引", findIndex);
+
+      //刪除ID為823423的評論
+
+      const newComments = [
+        ...comments.slice(0, findIndex),
+        ...comments.slice(findIndex + 1),
+      ];
+
+      console.log(newComments);
+    </script>
+  </body>
+</html>

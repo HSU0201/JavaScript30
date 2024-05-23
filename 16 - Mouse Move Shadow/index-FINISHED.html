@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mouse Shadow</title>
+  <link rel="icon" href="https://fav.farm/✅" />
+</head>
+<body>
+
+  <div class="hero">
+    <h1 contenteditable>🔥WOAH!</h1>
+  </div>
+
+  <style>
+  html {
+    color: black;
+    font-family: sans-serif;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+  }
+
+  h1 {
+    text-shadow: 10px 10px 0 rgba(0,0,0,1);
+    font-size: 100px;
+  }
+  </style>
+
+<script>
+// 選取 hero 元素和其中的 h1 元素
+const hero = document.querySelector('.hero');
+const text = hero.querySelector('h1');
+const walk = 500; // 陰影最大位移量為 500px
+
+// 定義一個函式 shadow，用來處理滑鼠移動事件
+function shadow(e) {
+  // 取得 hero 元素的寬度和高度
+  const { offsetWidth: width, offsetHeight: height } = hero;
+  // 初始化滑鼠相對於 hero 元素的位置
+  let { offsetX: x, offsetY: y } = e;
+
+  // 如果觸發事件的不是 hero 元素，則更新 x 和 y 的值
+  if (this !== e.target) {
+    x = x + e.target.offsetLeft;
+    y = y + e.target.offsetTop;
+  }
+
+  // 計算 x 和 y 方向上的陰影位移量
+  const xWalk = Math.round((x / width * walk) - (walk / 2));
+  const yWalk = Math.round((y / height * walk) - (walk / 2));
+
+  // 設置文字陰影效果，使用 text-shadow CSS 屬性
+  text.style.textShadow = `
+    ${xWalk}px ${yWalk}px 0 rgba(255,0,255,0.7),  // 粉紅色陰影
+    ${xWalk * -1}px ${yWalk}px 0 rgba(0,255,255,0.7),  // 青色陰影
+    ${yWalk}px ${xWalk * -1}px 0 rgba(0,255,0,0.7),  // 綠色陰影
+    ${yWalk * -1}px ${xWalk}px 0 rgba(0,0,255,0.7)  // 藍色陰影
+  `;
+}
+
+
+// 監聽 hero 元素的滑鼠移動事件
+hero.addEventListener('mousemove', shadow);
+
+</script>
+</body>
+</html>

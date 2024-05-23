@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Video Speed Scrubber</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="https://fav.farm/✅" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- <video class="flex" width="765" height="430" src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" loop controls></video> -->
+      <video
+        class="flex"
+        width="765"
+        height="430"
+        src="652333414.mp4"
+        loop
+        controls
+      ></video>
+      <div class="speed">
+        <div class="speed-bar">1×</div>
+      </div>
+    </div>
+
+    <script>
+      // 選取網頁中的速度控制區域元素
+      const speed = document.querySelector(".speed");
+      // 選取速度控制區域中的進度條元素
+      const bar = speed.querySelector(".speed-bar");
+      // 選取網頁中的視頻元素
+      const video = document.querySelector(".flex");
+
+      // 定義處理鼠標移動事件的函數
+      function handleMove(e) {
+        // 計算鼠標在速度控制區域內的垂直位置
+        const y = e.pageY - this.offsetTop;
+        // 計算鼠標位置佔速度控制區域總高度的百分比
+        const percent = y / this.offsetHeight;
+        // 設定視頻播放速度的最小值
+        const min = 0.4;
+        // 設定視頻播放速度的最大值
+        const max = 4;
+        // 計算進度條的高度百分比並轉換為百分比字符串
+        const height = Math.round(percent * 100) + "%";
+        // 根據百分比計算當前視頻播放速度
+        const playbackRate = percent * (max - min) + min;
+        // 設置進度條的高度
+        bar.style.height = height;
+        // 在進度條上顯示當前播放速度
+        bar.textContent = playbackRate.toFixed(2) + "×";
+        // 設置視頻的播放速度
+        video.playbackRate = playbackRate;
+      }
+
+      // 為速度控制區域添加鼠標移動事件監聽器
+      speed.addEventListener("mousemove", handleMove);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Speech Detection</title>
+    <link rel="icon" href="https://fav.farm/✅" />
+  </head>
+  <body>
+    <div class="words" contenteditable></div>
+
+    <script>
+      // 設定 SpeechRecognition，確保在不同瀏覽器上的兼容性
+      window.SpeechRecognition =
+        window.SpeechRecognition || window.webkitSpeechRecognition;
+
+      // 建立 SpeechRecognition 物件
+      const recognition = new SpeechRecognition();
+      // 設定是否顯示中間結果
+      recognition.interimResults = true;
+      // 設定語言為英語（美國）
+      recognition.lang = "en-US";
+
+      // 建立一個段落元素來顯示結果
+      let p = document.createElement("p");
+      // 取得網頁中的 .words 容器
+      const words = document.querySelector(".words");
+      // 將段落元素添加到 .words 容器中
+      words.appendChild(p);
+
+      // 當有語音識別結果時觸發
+      recognition.addEventListener("result", (e) => {
+        // 將結果轉換為陣列，並提取轉錄文本
+        const transcript = Array.from(e.results)
+          .map((result) => result[0])
+          .map((result) => result.transcript)
+          .join("");
+
+        // 將不雅詞語替換為表情符號 💩
+        const poopScript = transcript.replace(/poop|poo|shit|dump/gi, "💩");
+        // 將替換後的文本顯示在段落元素中
+        p.textContent = poopScript;
+
+        // 如果這是最終結果，則創建一個新的段落元素來顯示後續的結果
+        if (e.results[0].isFinal) {
+          p = document.createElement("p");
+          words.appendChild(p);
+        }
+      });
+
+      // 當語音識別結束時，重新啟動語音識別
+      recognition.addEventListener("end", recognition.start);
+
+      // 啟動語音識別
+      recognition.start();
+    </script>
+
+    <style>
+      html {
+        font-size: 10px;
+      }
+
+      body {
+        background: #ffc600;
+        font-family: "helvetica neue";
+        font-weight: 200;
+        font-size: 20px;
+      }
+
+      .words {
+        max-width: 500px;
+        margin: 50px auto;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+        padding: 1rem 2rem 1rem 5rem;
+        background: -webkit-gradient(
+            linear,
+            0 0,
+            0 100%,
+            from(#d9eaf3),
+            color-stop(4%, #fff)
+          )
+          0 4px;
+        background-size: 100% 3rem;
+        position: relative;
+        line-height: 3rem;
+      }
+
+      p {
+        margin: 0 0 3rem;
+      }
+
+      .words:before {
+        content: "";
+        position: absolute;
+        width: 4px;
+        top: 0;
+        left: 30px;
+        bottom: 0;
+        border: 1px solid;
+        border-color: transparent #efe4e4;
+      }
+    </style>
+  </body>
+</html>

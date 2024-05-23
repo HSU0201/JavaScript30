@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML5 Canvas</title>
+    <link rel="icon" href="https://fav.farm/✅" />
+  </head>
+  <body>
+    <canvas id="draw" width="800" height="800"></canvas>
+    <script>
+      const canvas = document.querySelector("#draw"); // 獲取畫布元素
+      const ctx = canvas.getContext("2d"); // 獲取畫布的 2D 繪圖上下文
+      canvas.width = window.innerWidth; // 設定畫布寬度為視窗內寬度
+      canvas.height = window.innerHeight; // 設定畫布高度為視窗內高度
+      ctx.strokeStyle = "#BADA55"; // 設定筆觸顏色
+      ctx.lineJoin = "round"; // 設定筆觸連接處的樣式為圓形
+      ctx.lineCap = "round"; // 設定筆觸終點處的樣式為圓形
+      ctx.lineWidth = 100; // 設定筆觸寬度為 100
+      // ctx.globalCompositeOperation = 'multiply';
+
+      let isDrawing = false; // 記錄是否正在繪圖
+      let lastX = 0; // 記錄上一次繪圖的 X 座標
+      let lastY = 0; // 記錄上一次繪圖的 Y 座標
+      let hue = 0; // 記錄顏色的色相
+      let direction = true; // 記錄筆觸寬度變化方向
+
+      function draw(e) {
+        if (!isDrawing) return; // 如果沒有按下滑鼠，則不進行繪圖
+        console.log(e);
+        ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`; // 設定筆觸顏色為 HSL 格式
+        ctx.beginPath();
+        // 開始繪圖
+        ctx.moveTo(lastX, lastY); // 從上一次的位置開始
+        // 移動到新的位置
+        ctx.lineTo(e.offsetX, e.offsetY); // 畫一條線到當前滑鼠位置
+        ctx.stroke(); // 實際繪製筆觸
+        [lastX, lastY] = [e.offsetX, e.offsetY]; // 更新上一次的滑鼠位置
+
+        hue++; // 增加色相
+        if (hue >= 360) {
+          hue = 0; // 如果色相達到 360，重置為 0
+        }
+        if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
+          direction = !direction; // 如果筆觸寬度達到最大或最小值，反轉方向
+        }
+
+        if (direction) {
+          ctx.lineWidth++; // 如果方向為真，增加筆觸寬度
+        } else {
+          ctx.lineWidth--; // 如果方向為假，減少筆觸寬度
+        }
+      }
+
+      // 當滑鼠按下時開始繪圖，並記錄當前滑鼠位置
+      canvas.addEventListener("mousedown", (e) => {
+        isDrawing = true;
+        [lastX, lastY] = [e.offsetX, e.offsetY];
+      });
+
+      // 當滑鼠移動時進行繪圖
+      canvas.addEventListener("mousemove", draw);
+      // 當滑鼠釋放時停止繪圖
+      canvas.addEventListener("mouseup", () => (isDrawing = false));
+      // 當滑鼠離開畫布時停止繪圖
+      canvas.addEventListener("mouseout", () => (isDrawing = false));
+    </script>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+      }
+    </style>
+  </body>
+</html>

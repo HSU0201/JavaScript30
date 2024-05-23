@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS Reference VS Copy</title>
+    <link rel="icon" href="https://fav.farm/🔥" />
+  </head>
+  <body>
+    <script>
+      // 先從基本類型：字串、數字和布林值開始
+      // let age = 100;
+      // let age2 = age;
+      // console.log(age, age2); // 100 100
+      // age = 200;
+      // console.log(age, age2); // 200 100
+
+      // let name = 'Wes';
+      // let name2 = name;
+      // console.log(name, name2); // Wes Wes
+      // name = 'wesley';
+      // console.log(name, name2); // wesley Wes
+
+      // 假設我們有一個陣列
+      const players = ["Wes", "Sarah", "Ryan", "Poppy"];
+
+      // 我們想要複製這個陣列
+      const team = players;
+
+      console.log(players, team); // ['Wes', 'Sarah', 'Ryan', 'Poppy'] ['Wes', 'Sarah', 'Ryan', 'Poppy']
+      // 你可能會認為我們可以這樣做來複製陣列:
+      // team[3] = 'Lux';
+
+      // 但當我們更新這個陣列時會發生什麼？
+
+      // 現在問題來了！
+
+      // 哦不 - 我們也編輯了原始陣列！
+
+      // 為什麼？因為這是一個陣列引用，而不是陣列的拷貝。它們都指向同一個陣列！
+
+      // 那麼，我們如何解決這個問題呢？我們應該複製一份陣列！
+      const team2 = players.slice(); // 使用 slice() 方法來複製陣列
+
+      // 一種方法
+
+      // 或者創建一個新陣列，並將舊的陣列合併進去
+      const team3 = [].concat(players); // 使用 concat() 方法來複製陣列
+
+      // 或者使用新的 ES6 展開運算符
+      const team4 = [...players]; // 使用展開運算符來複製陣列
+      team4[3] = "heeee hawww"; // 修改複製的陣列
+      console.log(team4); // ['Wes', 'Sarah', 'Ryan', 'heeee hawww']
+
+      const team5 = Array.from(players); // 使用 Array.from() 方法來複製陣列
+
+      // 現在當我們更新複製的陣列時，原始陣列不會被更改
+
+      // 對於物件來說也是一樣的，假設我們有一個 person 物件
+
+      // 物件的例子
+      const person = {
+        name: "Wes Bos",
+        age: 80,
+      };
+
+      // 如果我們認為這樣是做了一個拷貝：
+      // const captain = person;
+      // captain.number = 99; // 這樣其實是修改了原始物件
+
+      // 我們如何真正複製一份物件呢？
+      const cap2 = Object.assign({}, person, { number: 99, age: 12 }); // 使用 Object.assign() 方法來複製物件，並可以同時修改一些屬性
+      console.log(cap2); // { name: 'Wes Bos', age: 12, number: 99 }
+
+      // 我們希望能夠使用展開運算符來複製物件
+      // const cap3 = {...person};
+
+      // 注意 - 這樣的複製僅限於淺層拷貝 - 對於陣列和物件都是如此。lodash 有一個 cloneDeep 方法，但你應該在使用它之前三思。
+
+      const wes = {
+        name: "Wes",
+        age: 100,
+        social: {
+          twitter: "@wesbos",
+          facebook: "wesbos.developer",
+        },
+      };
+
+      // console.clear();
+      console.log(wes); // 輸出原始物件
+
+      const dev = Object.assign({}, wes); // 使用 Object.assign() 方法進行淺層拷貝
+
+      const dev2 = JSON.parse(JSON.stringify(wes)); // 使用 JSON 方法進行深層拷貝
+
+      // dev 是淺層拷貝，dev2 是深層拷貝
+    </script>
+  </body>
+</html>

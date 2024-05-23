@@ -1,0 +1,203 @@
+:root {
+    --theme-color: #f6d429;
+    --sec-color: #ab9410;
+    --white-color: aliceblue;
+    --border-radius: 10px;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.header {
+    background-color: var(--theme-color);
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    border-radius: var(--border-radius);
+
+    .header-title {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        text-align: center;
+        font-size: larger;
+        padding-inline: 25px;
+
+        & a {
+            margin-inline: 20px;
+            text-decoration: none;
+            font-size: 40px;
+            color: rgb(0, 0, 0);
+        }
+
+        .header-btn:hover {
+            color: var(--sec-color);
+        }
+    }
+
+    .header-p {
+        color: rgb(0, 0, 0);
+        width: 95%;
+        margin: auto;
+        padding: 10px;
+        font-size: 18px;
+    }
+}
+
+.main {
+    margin-block: 50px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+
+    .card {
+        margin: auto;
+        max-width: 300px;
+        position: relative;
+        border-radius: var(--border-radius);
+        background-color: var(--white-color);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.349);
+        margin-block: 10px;
+
+        .tag {
+            position: absolute;
+            top: 20px;
+            left: -15px;
+            background-color: var(--theme-color);
+            width: 90px;
+            color: #000;
+            padding: 6px 0;
+            font-weight: bold;
+            text-align: center;
+            transition: 0.5s;
+        }
+
+        .tag::after {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: -20px;
+            width: 20px;
+            height: 5px;
+            border-style: solid;
+            border-width: 0 20px 20px 0;
+            border-color: transparent var(--sec-color) transparent transparent;
+            transition: 0.3s;
+            transition-delay: 0.5s;
+            z-index: -1;
+        }
+
+        .tag::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 5px;
+            border-style: solid;
+            border-width: 20px 0 0 20px;
+            border-color: transparent transparent transparent var(--sec-color);
+            transition: 0.3s;
+            transition-delay: 0.5s;
+            z-index: -1;
+        }
+
+        .img {
+            width: 100%;
+            height: 250px;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .card-text {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.349);
+
+        .tag {
+            width: 0;
+        }
+
+        .tag::after {
+            left: 0;
+            top: 70%;
+        }
+
+        .tag::before {
+            left: 20px;
+            top: 20px;
+        }
+
+        .tag-day {
+            opacity: 0;
+        }
+    }
+
+    .card:not(:hover) .tag::after,
+    .card:not(:hover) .tag::before {
+        transition: left 0.3s, top 0.3s;
+    }
+
+    .card-content {
+        margin: 0 0 50px 0;
+
+        .card-title {
+            margin: 10px;
+        }
+
+        .card-text {
+            margin: 10px;
+        }
+    }
+
+    .card-buttons {
+        /* background-color: blueviolet; */
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 1px;
+        margin: 0;
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+        overflow: hidden;
+
+        .card-btn {
+            background-color: var(--white-color);
+            width: 40%;
+            text-align: center;
+            text-decoration: none;
+            color: #000;
+            padding: 10px 20px;
+
+        }
+
+        .card-btn:hover {
+            color: var(--sec-color);
+            background-color: var(--theme-color);
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    background-color: black;
+    color: var(--white-color);
+    border-radius: var(--border-radius);
+    height: 50px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}

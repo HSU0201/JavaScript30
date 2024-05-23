@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Whack A Mole!</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="https://fav.farm/🔥" />
+  </head>
+  <body>
+    <h1>Whack-a-mole! <span class="score">0</span></h1>
+    <div class="title">
+      <button class="start-btn" onClick="startGame()">Start!</button>
+    </div>
+    <div class="chronograph">chronograph</div>
+
+    <div class="game">
+      <div class="hole hole1">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole2">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole3">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole4">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole5">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole6">
+        <div class="mole"></div>
+      </div>
+    </div>
+
+    <script>
+      const holes = document.querySelectorAll(".hole");
+      const scoreBoard = document.querySelector(".score");
+      const moles = document.querySelectorAll(".mole");
+      let lastHole;
+      let timeUp = false;
+      let score = 0;
+      let countdown;
+      let gameTime = 10000;
+
+      // 隨機時間給地鼠出現
+      function randomTime(min, max) {
+        return Math.round(Math.random() * (max - min) + min);
+      }
+
+      // 隨機洞口
+      function randomHole(holes) {
+        const idx = Math.floor(Math.random() * holes.length);
+        const hole = holes[idx];
+        if (hole === lastHole) {
+          console.log("如果選到的洞和上一次相同，則重新選擇");
+          return randomHole(holes);
+        }
+        lastHole = hole;
+        return hole;
+      }
+
+      // 出現地鼠
+      function peep() {
+        const time = randomTime(200, 1000);
+        const hole = randomHole(holes);
+        hole.classList.add("up");
+        setTimeout(() => {
+          hole.classList.remove("up");
+          if (!timeUp) peep();
+        }, time);
+      }
+
+      // 遊戲開始
+      function startGame() {
+        scoreBoard.textContent = 0;
+        timeUp = false;
+        score = 0;
+        chronograph();
+        peep();
+        setTimeout(() => (timeUp = true), gameTime);
+      }
+      // 打到地鼠
+      function bonk(e) {
+        if (!e.isTrusted) return;
+        score++;
+        this.parentNode.classList.remove("up");
+        scoreBoard.textContent = score;
+      }
+
+      function chronograph() {
+        clearInterval(countdown);
+        const now = Date.now();
+
+        const then = now + gameTime;
+        disPlayTime(Math.round(gameTime / 1000));
+        countdown = setInterval(() => {
+          const secondsLeft = then - Date.now();
+
+          if (secondsLeft < 0) {
+            clearInterval(countdown);
+            disPlayTime("chronograph");
+            return;
+          }
+          disPlayTime(Math.round(secondsLeft / 1000));
+        }, 1000);
+      }
+
+      function disPlayTime(seconds) {
+        const display = `${seconds}`;
+        document.querySelector(".chronograph").textContent = display;
+      }
+
+      moles.forEach((mole) => mole.addEventListener("click", bonk));
+    </script>
+  </body>
+</html>

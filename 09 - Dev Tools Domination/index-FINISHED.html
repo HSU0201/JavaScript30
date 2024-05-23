@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Console Tricks!</title>
+    <link rel="icon" href="https://fav.farm/✅" />
+  </head>
+  <body>
+    <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+    <script>
+      const dogs = [
+        { name: "Snickers", age: 2 },
+        { name: "hugo", age: 8 },
+      ];
+
+      function makeGreen() {
+        const p = document.querySelector("p"); // 獲取第一個 <p> 元素
+        p.style.color = "#BADA55"; // 設置文本顏色為 #BADA55
+        p.style.fontSize = "50px"; // 設置字體大小為 50px
+      }
+
+      // Regular
+      console.log("hello"); // 一般的 console.log 輸出
+
+      // Interpolated
+      console.log("Hello I am a %s string!", "💩"); // 帶有插值的 console.log 輸出
+
+      // Styled
+      // 使用自定義樣式的 console.log 輸出
+      // console.log('%c I am some great text', 'font-size:50px; background:red; text-shadow: 10px 10px 0 blue')
+
+      // warning!
+      console.warn("OH NOOO"); // 輸出警告信息
+
+      // Error :|
+      console.error("Shit!"); // 輸出錯誤信息
+
+      // Info
+      console.info("Crocodiles eat 3-4 people per year"); // 輸出提示信息
+
+      // Testing
+      const p = document.querySelector("p"); // 獲取第一個 <p> 元素
+
+      // 使用 console.assert 進行測試，條件為 p 元素是否包含 'ouch' 類
+      console.assert(p.classList.contains("ouch"), "That is wrong!");
+
+      // clearing
+      console.clear(); // 清空控制台
+
+      // Viewing DOM Elements
+      console.log(p); // 輸出 p 元素
+      console.dir(p); // 以對象形式顯示 p 元素
+
+      console.clear(); // 清空控制台
+
+      // Grouping together
+      dogs.forEach((dog) => {
+        console.groupCollapsed(`${dog.name}`); // 折疊分組，每個狗狗一組
+        console.log(`This is ${dog.name}`); // 輸出狗狗的名字
+        console.log(`${dog.name} is ${dog.age} years old`); // 輸出狗狗的年齡
+        console.log(`${dog.name} is ${dog.age * 7} dog years old`); // 輸出狗狗的狗年齡（年齡乘以 7）
+        console.groupEnd(`${dog.name}`); // 結束分組
+      });
+
+      // counting
+
+      // 計數 'Wes' 出現的次數
+      console.count("Wes");
+      console.count("Wes");
+      console.count("Steve");
+      console.count("Steve");
+      console.count("Wes");
+      console.count("Steve");
+      console.count("Wes");
+      console.count("Steve");
+      console.count("Steve");
+      console.count("Steve");
+      console.count("Steve");
+      console.count("Steve");
+
+      // timing
+      console.time("fetching data"); // 開始計時 'fetching data'
+      fetch("https://api.github.com/users/wesbos")
+        .then((data) => data.json()) // 將獲取到的數據轉換為 JSON
+        .then((data) => {
+          console.timeEnd("fetching data"); // 結束計時 'fetching data'
+          console.log(data); // 輸出獲取到的數據
+        });
+
+      console.table(dogs); // 以表格形式輸出 dogs 數組
+    </script>
+  </body>
+</html>

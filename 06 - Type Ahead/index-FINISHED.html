@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://fav.farm/✅" />
+</head>
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="City or State">
+    <ul class="suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+<script>
+const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+
+// 定義一個空的城市陣列
+const cities = [];
+
+// 從指定的 endpoint 獲取數據，並解析成 JSON 格式後將數據添加到城市陣列中
+fetch(endpoint)
+  .then(blob => blob.json()) // 將獲取到的數據 blob 解析為 JSON
+  .then(data => cities.push(...data)); // 將解析出的數據展開並添加到 cities 陣列中
+
+// 定義一個函數，用於根據輸入的單詞在城市數據中查找匹配的項目
+function findMatches(wordToMatch, cities) {
+  return cities.filter(place => {
+    // 創建一個正則表達式，用於進行不區分大小寫的匹配
+    const regex = new RegExp(wordToMatch, 'gi');
+    // 返回 city 或 state 與輸入單詞匹配的項目
+    return place.city.match(regex) || place.state.match(regex);
+  });
+}
+
+// 定義一個函數，用於將數字格式化為帶有逗號分隔的形式
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+// 定義一個函數，用於顯示匹配的結果
+function displayMatches() {
+  // 獲取與輸入值匹配的城市數據
+  const matchArray = findMatches(this.value, cities);
+  // 生成匹配項目的 HTML 結構
+  const html = matchArray.map(place => {
+    // 創建一個正則表達式，用於高亮顯示匹配的部分
+    const regex = new RegExp(this.value, 'gi');
+    // 將匹配的城市名稱部分替換為帶有 <span> 標籤的高亮顯示形式
+    const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
+    // 將匹配的州名稱部分替換為帶有 <span> 標籤的高亮顯示形式
+    const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
+    // 返回每個匹配項目的 HTML 結構
+    return `
+      <li>
+        <span class="name">${cityName}, ${stateName}</span>
+        <span class="population">${numberWithCommas(place.population)}</span>
+      </li>
+    `;
+  }).join(''); // 將所有匹配項目連接成一個完整的 HTML 字符串
+  // 將生成的 HTML 結構插入到 suggestions 元素中
+  suggestions.innerHTML = html;
+}
+
+// 獲取 DOM 中的搜索輸入框和建議列表元素
+const searchInput = document.querySelector('.search');
+const suggestions = document.querySelector('.suggestions');
+
+// 為搜索輸入框添加事件監聽器，在內容變更時觸發 displayMatches 函數
+searchInput.addEventListener('change', displayMatches);
+// 為搜索輸入框添加事件監聽器，在按鍵釋放時觸發 displayMatches 函數
+searchInput.addEventListener('keyup', displayMatches);
+
+
+</script>
+  </body>
+</html>

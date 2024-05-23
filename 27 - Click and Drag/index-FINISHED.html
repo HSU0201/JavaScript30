@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Click and Drag</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="https://fav.farm/✅" />
+  </head>
+  <body>
+    <div class="items">
+      <div class="item item1">01</div>
+      <div class="item item2">02</div>
+      <div class="item item3">03</div>
+      <div class="item item4">04</div>
+      <div class="item item5">05</div>
+      <div class="item item6">06</div>
+      <div class="item item7">07</div>
+      <div class="item item8">08</div>
+      <div class="item item9">09</div>
+      <div class="item item10">10</div>
+      <div class="item item11">11</div>
+      <div class="item item12">12</div>
+      <div class="item item13">13</div>
+      <div class="item item14">14</div>
+      <div class="item item15">15</div>
+      <div class="item item16">16</div>
+      <div class="item item17">17</div>
+      <div class="item item18">18</div>
+      <div class="item item19">19</div>
+      <div class="item item20">20</div>
+      <div class="item item21">21</div>
+      <div class="item item22">22</div>
+      <div class="item item23">23</div>
+      <div class="item item24">24</div>
+      <div class="item item25">25</div>
+    </div>
+
+    <script>
+      // 選取 class 名為 "items" 的元素
+      const slider = document.querySelector(".items");
+
+      // 定義變量以追踪滑鼠是否按下、滑鼠起始 X 軸位置以及元素的初始捲動位置
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      // 當滑鼠按下事件發生時觸發
+      slider.addEventListener("mousedown", (e) => {
+        // 設定 isDown 為 true，表示滑鼠已按下
+        isDown = true;
+        // 在 slider 元素上增加一個 class 名為 "active"
+        slider.classList.add("active");
+        // 記錄滑鼠按下時的 X 軸位置，相對於 slider 元素的左邊緣
+        startX = e.pageX - slider.offsetLeft;
+        // 記錄滑鼠按下時 slider 元素的捲動位置
+        scrollLeft = slider.scrollLeft;
+      });
+
+      // 當滑鼠離開 slider 元素時觸發
+      slider.addEventListener("mouseleave", () => {
+        // 設定 isDown 為 false，表示滑鼠已鬆開
+        isDown = false;
+        // 移除 slider 元素上的 "active" class
+        slider.classList.remove("active");
+      });
+
+      // 當滑鼠在 slider 元素上鬆開時觸發
+      slider.addEventListener("mouseup", () => {
+        // 設定 isDown 為 false，表示滑鼠已鬆開
+        isDown = false;
+        // 移除 slider 元素上的 "active" class
+        slider.classList.remove("active");
+      });
+
+      // 當滑鼠在 slider 元素上移動時觸發
+      slider.addEventListener("mousemove", (e) => {
+        // 如果滑鼠沒有按下，則停止執行此函數
+        if (!isDown) return;
+        // 阻止預設行為（例如選中文本）
+        e.preventDefault();
+        // 計算滑鼠目前的 X 軸位置，相對於 slider 元素的左邊緣
+        const x = e.pageX - slider.offsetLeft;
+        // 計算滑鼠移動的距離，並乘以一個係數來調整捲動速度
+        const walk = (x - startX) * 3;
+        // 設定 slider 元素的新捲動位置
+        slider.scrollLeft = scrollLeft - walk;
+      });
+    </script>
+  </body>
+</html>
