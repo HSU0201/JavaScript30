@@ -58,7 +58,7 @@
 ## 聯絡我
 
 - 如果您對這些作品有任何問題或建議，請隨時通過GitHub或我的信箱與我聯絡。
-- GitHub: [[hsu0201](https://github.com/HSU0201)
+- GitHub: [hsu0201](https://github.com/HSU0201)
 - 信箱: [google mail](https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&su=Hello+Ben,+From+Github&to=happymin0318@gmail.com)
 
 感謝您的理解和支持。
