@@ -31,8 +31,7 @@ var days = [
     desc: "設計一個可調整圖片邊框、模糊度和黑白效果的濾鏡應用。",
     blog: "",
     demo: "https://hsu0201.github.io/JavaScript30/03-CSSVariables/hsuJS03.html",
-    github:
-      "https://github.com/HSU0201/JavaScript30/tree/main/03-CSSVariables",
+    github: "https://github.com/HSU0201/JavaScript30/tree/main/03-CSSVariables",
     gifYn: "Y",
     image:
       "https://github.com/HSU0201/JavaScript30/blob/main/img/03.png?raw=true",
@@ -70,8 +69,7 @@ var days = [
     desc: "創建一個即時顯示搜尋結果的輸入框應用程式。",
     blog: "",
     demo: "https://hsu0201.github.io/JavaScript30/06-TypeAhead/hsuJS06.html",
-    github:
-      "https://github.com/HSU0201/JavaScript30/tree/main/06-TypeAhead",
+    github: "https://github.com/HSU0201/JavaScript30/tree/main/06-TypeAhead",
     gifYn: "Y",
     image:
       "https://github.com/HSU0201/JavaScript30/blob/main/img/06.png?raw=true",
@@ -187,8 +185,7 @@ var days = [
     desc: "開發一個利用 localStorage 進行菜單增刪操作的應用程式。",
     blog: "",
     demo: "https://hsu0201.github.io/JavaScript30/15-LocalStorage/hsuJS15.html",
-    github:
-      "https://github.com/HSU0201/JavaScript30/tree/main/15-LocalStorage",
+    github: "https://github.com/HSU0201/JavaScript30/tree/main/15-LocalStorage",
     gifYn: "Y",
     image:
       "https://github.com/HSU0201/JavaScript30/blob/main/img/15.png?raw=true",
@@ -239,8 +236,7 @@ var days = [
     desc: "利用 getUserMedia 和 canvas 來實現影像濾鏡效果。",
     blog: "",
     demo: "https://hsu0201.github.io/JavaScript30/19-WebcamFun/hsuJS19.html",
-    github:
-      "https://github.com/HSU0201/JavaScript30/tree/main/19-WebcamFun",
+    github: "https://github.com/HSU0201/JavaScript30/tree/main/19-WebcamFun",
     gifYn: "Y",
     image:
       "https://github.com/HSU0201/JavaScript30/blob/main/img/19.png?raw=true",
@@ -265,8 +261,7 @@ var days = [
     desc: "創建一個顯示當前地理位置和速度的應用程式。",
     blog: "",
     demo: "https://hsu0201.github.io/JavaScript30/21-Geolocation/hsuJS21.html",
-    github:
-      "https://github.com/HSU0201/JavaScript30/tree/main/21-Geolocation",
+    github: "https://github.com/HSU0201/JavaScript30/tree/main/21-Geolocation",
     gifYn: "N",
     image:
       "https://github.com/HSU0201/JavaScript30/blob/main/img/21.png?raw=true",
@@ -304,8 +299,7 @@ var days = [
     desc: "設計一個根據捲動位置變化樣式的固定導航欄。",
     blog: "",
     demo: "https://hsu0201.github.io/JavaScript30/24-StickyNav/hsuJS24.html",
-    github:
-      "https://github.com/HSU0201/JavaScript30/tree/main/24-StickyNav",
+    github: "https://github.com/HSU0201/JavaScript30/tree/main/24-StickyNav",
     gifYn: "Y",
     image:
       "https://github.com/HSU0201/JavaScript30/blob/main/img/24.png?raw=true",
@@ -343,8 +337,7 @@ var days = [
     desc: "創建一個可以拖曳移動的水平捲動應用。",
     blog: "",
     demo: "https://hsu0201.github.io/JavaScript30/27-ClickandDrag/hsuJS27.html",
-    github:
-      "https://github.com/HSU0201/JavaScript30/tree/main/27-ClickandDrag",
+    github: "https://github.com/HSU0201/JavaScript30/tree/main/27-ClickandDrag",
     gifYn: "Y",
     image:
       "https://github.com/HSU0201/JavaScript30/blob/main/img/27.png?raw=true",
@@ -382,8 +375,7 @@ var days = [
     desc: "創建一個打地鼠的小遊戲。",
     blog: "",
     demo: "https://hsu0201.github.io/JavaScript30/30-WhackAMole/hsuJS30.html",
-    github:
-      "https://github.com/HSU0201/JavaScript30/tree/main/30-WhackAMole",
+    github: "https://github.com/HSU0201/JavaScript30/tree/main/30-WhackAMole",
     gifYn: "Y",
     image:
       "https://github.com/HSU0201/JavaScript30/blob/main/img/30.png?raw=true",
@@ -391,7 +383,8 @@ var days = [
   },
 ];
 
-function createView() {
+function createView(e) {
+  if (e.target.tagName === "A") return;
   let main = document.querySelector(".main");
   let view = "";
   days.forEach((day) => {
@@ -449,6 +442,7 @@ function changeImageType(e) {
 }
 
 function enlargeCard(e) {
+  if (e.target.closest('.card-buttons')) return;
   const card = e.currentTarget;
   const title = card.dataset.title;
   const desc = card.dataset.desc;
@@ -481,5 +475,4 @@ function enlargeCard(e) {
     .querySelector(".return-btn")
     .addEventListener("click", () => location.reload());
 }
-
 document.addEventListener("DOMContentLoaded", createView);
