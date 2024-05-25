@@ -8,8 +8,8 @@ var days = [
     github: "",
     gifYn: "Y",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/01.png?raw=true",
-    gif: "https://github.com/HSU0201/JavaScript30/blob/master/img/01.gif?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/01.png?raw=true",
+    gif: "https://github.com/HSU0201/JavaScript30/blob/main/img/01.gif?raw=true",
   },
   {
     no: "Day02",
@@ -20,8 +20,8 @@ var days = [
     github: "",
     gifYn: "Y",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/02.png?raw=true",
-    gif: "https://github.com/HSU0201/JavaScript30/blob/master/img/02.gif?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/02.png?raw=true",
+    gif: "https://github.com/HSU0201/JavaScript30/blob/main/img/02.gif?raw=true",
   },
   {
     no: "Day03",
@@ -32,8 +32,8 @@ var days = [
     github: "",
     gifYn: "Y",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/03.png?raw=true",
-    gif: "https://github.com/HSU0201/JavaScript30/blob/master/img/03.gif?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/03.png?raw=true",
+    gif: "https://github.com/HSU0201/JavaScript30/blob/main/img/03.gif?raw=true",
   },
   {
     no: "Day04",
@@ -44,7 +44,7 @@ var days = [
     github: "",
     gifYn: "N",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/04.png?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/04.png?raw=true",
     gif: "",
   },
   {
@@ -56,8 +56,8 @@ var days = [
     github: "",
     gifYn: "Y",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/05.png?raw=true",
-    gif: "https://github.com/HSU0201/JavaScript30/blob/master/img/05.gif?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/05.png?raw=true",
+    gif: "https://github.com/HSU0201/JavaScript30/blob/main/img/05.gif?raw=true",
   },
   {
     no: "Day06",
@@ -68,8 +68,8 @@ var days = [
     github: "",
     gifYn: "Y",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/06.png?raw=true",
-    gif: "https://github.com/HSU0201/JavaScript30/blob/master/img/06.gif?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/06.png?raw=true",
+    gif: "https://github.com/HSU0201/JavaScript30/blob/main/img/06.gif?raw=true",
   },
   {
     no: "Day07",
@@ -80,7 +80,7 @@ var days = [
     github: "",
     gifYn: "N",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/07.png?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/07.png?raw=true",
     gif: "",
   },
   {
@@ -92,7 +92,7 @@ var days = [
     github: "",
     gifYn: "Y",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/08.png?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/08.png?raw=true",
     gif: "",
   },
   {
@@ -104,7 +104,7 @@ var days = [
     github: "",
     gifYn: "N",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/09.png?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/09.png?raw=true",
     gif: "",
   },
   {
@@ -116,8 +116,8 @@ var days = [
     github: "",
     gifYn: "Y",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/10.png?raw=true",
-    gif: "https://github.com/HSU0201/JavaScript30/blob/master/img/10.gif?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/10.png?raw=true",
+    gif: "https://github.com/HSU0201/JavaScript30/blob/main/img/10.gif?raw=true",
   },
   {
     no: "Day11",
@@ -128,8 +128,8 @@ var days = [
     github: "",
     gifYn: "Y",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/11.png?raw=true",
-    gif: "https://github.com/HSU0201/JavaScript30/blob/master/img/11.gif?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/11.png?raw=true",
+    gif: "https://github.com/HSU0201/JavaScript30/blob/main/img/11.gif?raw=true",
   },
   {
     no: "Day12",
@@ -140,8 +140,8 @@ var days = [
     github: "",
     gifYn: "Y",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/12.png?raw=true",
-    gif: "https://github.com/HSU0201/JavaScript30/blob/master/img/12.gif?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/12.png?raw=true",
+    gif: "https://github.com/HSU0201/JavaScript30/blob/main/img/12.gif?raw=true",
   },
   {
     no: "Day13",
@@ -152,8 +152,8 @@ var days = [
     github: "",
     gifYn: "Y",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/13.png?raw=true",
-    gif: "https://github.com/HSU0201/JavaScript30/blob/master/img/13.gif?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/13.png?raw=true",
+    gif: "https://github.com/HSU0201/JavaScript30/blob/main/img/13.gif?raw=true",
   },
   {
     no: "Day14",
@@ -164,7 +164,7 @@ var days = [
     github: "",
     gifYn: "N",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/14.png?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/14.png?raw=true",
     gif: "",
   },
   {
@@ -176,8 +176,8 @@ var days = [
     github: "",
     gifYn: "Y",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/15.png?raw=true",
-    gif: "https://github.com/HSU0201/JavaScript30/blob/master/img/15.gif?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/15.png?raw=true",
+    gif: "https://github.com/HSU0201/JavaScript30/blob/main/img/15.gif?raw=true",
   },
   {
     no: "Day16",
@@ -188,8 +188,8 @@ var days = [
     github: "",
     gifYn: "Y",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/16.png?raw=true",
-    gif: "https://github.com/HSU0201/JavaScript30/blob/master/img/16.gif?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/16.png?raw=true",
+    gif: "https://github.com/HSU0201/JavaScript30/blob/main/img/16.gif?raw=true",
   },
   {
     no: "Day17",
@@ -200,7 +200,7 @@ var days = [
     github: "",
     gifYn: "N",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/17.png?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/17.png?raw=true",
     gif: "",
   },
   {
@@ -212,7 +212,7 @@ var days = [
     github: "",
     gifYn: "N",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/18.png?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/18.png?raw=true",
     gif: "",
   },
   {
@@ -224,8 +224,8 @@ var days = [
     github: "",
     gifYn: "Y",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/19.png?raw=true",
-    gif: "https://github.com/HSU0201/JavaScript30/blob/master/img/19.gif?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/19.png?raw=true",
+    gif: "https://github.com/HSU0201/JavaScript30/blob/main/img/19.gif?raw=true",
   },
   {
     no: "Day20",
@@ -236,8 +236,8 @@ var days = [
     github: "",
     gifYn: "Y",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/20.png?raw=true",
-    gif: "https://github.com/HSU0201/JavaScript30/blob/master/img/20.gif?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/20.png?raw=true",
+    gif: "https://github.com/HSU0201/JavaScript30/blob/main/img/20.gif?raw=true",
   },
   {
     no: "Day21",
@@ -248,7 +248,7 @@ var days = [
     github: "",
     gifYn: "N",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/21.png?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/21.png?raw=true",
     gif: "",
   },
   {
@@ -260,8 +260,8 @@ var days = [
     github: "",
     gifYn: "Y",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/22.png?raw=true",
-    gif: "https://github.com/HSU0201/JavaScript30/blob/master/img/22.gif?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/22.png?raw=true",
+    gif: "https://github.com/HSU0201/JavaScript30/blob/main/img/22.gif?raw=true",
   },
   {
     no: "Day23",
@@ -272,8 +272,8 @@ var days = [
     github: "",
     gifYn: "Y",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/23.png?raw=true",
-    gif: "https://github.com/HSU0201/JavaScript30/blob/master/img/23.gif?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/23.png?raw=true",
+    gif: "https://github.com/HSU0201/JavaScript30/blob/main/img/23.gif?raw=true",
   },
   {
     no: "Day24",
@@ -284,8 +284,8 @@ var days = [
     github: "",
     gifYn: "Y",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/24.png?raw=true",
-    gif: "https://github.com/HSU0201/JavaScript30/blob/master/img/24.gif?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/24.png?raw=true",
+    gif: "https://github.com/HSU0201/JavaScript30/blob/main/img/24.gif?raw=true",
   },
   {
     no: "Day25",
@@ -296,7 +296,7 @@ var days = [
     github: "",
     gifYn: "N",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/25.png?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/25.png?raw=true",
     gif: "",
   },
   {
@@ -308,8 +308,8 @@ var days = [
     github: "",
     gifYn: "Y",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/26.png?raw=true",
-    gif: "https://github.com/HSU0201/JavaScript30/blob/master/img/26.gif?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/26.png?raw=true",
+    gif: "https://github.com/HSU0201/JavaScript30/blob/main/img/26.gif?raw=true",
   },
   {
     no: "Day27",
@@ -320,8 +320,8 @@ var days = [
     github: "",
     gifYn: "Y",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/27.png?raw=true",
-    gif: "https://github.com/HSU0201/JavaScript30/blob/master/img/27.gif?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/27.png?raw=true",
+    gif: "https://github.com/HSU0201/JavaScript30/blob/main/img/27.gif?raw=true",
   },
   {
     no: "Day28",
@@ -332,8 +332,8 @@ var days = [
     github: "",
     gifYn: "Y",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/28.png?raw=true",
-    gif: "https://github.com/HSU0201/JavaScript30/blob/master/img/28.gif?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/28.png?raw=true",
+    gif: "https://github.com/HSU0201/JavaScript30/blob/main/img/28.gif?raw=true",
   },
   {
     no: "Day29",
@@ -344,8 +344,8 @@ var days = [
     github: "",
     gifYn: "Y",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/29.png?raw=true",
-    gif: "https://github.com/HSU0201/JavaScript30/blob/master/img/29.gif?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/29.png?raw=true",
+    gif: "https://github.com/HSU0201/JavaScript30/blob/main/img/29.gif?raw=true",
   },
   {
     no: "Day30",
@@ -356,8 +356,8 @@ var days = [
     github: "",
     gifYn: "Y",
     image:
-      "https://github.com/HSU0201/JavaScript30/blob/master/img/30.png?raw=true",
-    gif: "https://github.com/HSU0201/JavaScript30/blob/master/img/30.gif?raw=true",
+      "https://github.com/HSU0201/JavaScript30/blob/main/img/30.png?raw=true",
+    gif: "https://github.com/HSU0201/JavaScript30/blob/main/img/30.gif?raw=true",
   },
 ];
 
