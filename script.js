@@ -16,7 +16,7 @@ var days = [
     title: "JS and CSS Clock",
     desc: "開發一個實時顯示時間的時鐘應用程式。",
     blog: "",
-    demo: "https://hsu0201.github.io/JavaScript30/01-JavaScriptDrumKit/hsuJS01.html",
+    demo: "https://hsu0201.github.io/JavaScript30/02-JSandCSSClock/hsuJS02.html",
     github: "",
     gifYn: "Y",
     image:
