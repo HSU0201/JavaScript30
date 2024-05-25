@@ -4,8 +4,8 @@
 
 ## 專案列表
 
-  01 - JavaScript Drum Kit: 使用鍵盤觸發音效的爵士鼓應用程式。
-  02 - JS and CSS Clock: 一個時鐘應用程式，使用 JavaScript 控制指針的轉動。
+  - 01 - JavaScript Drum Kit: 使用鍵盤觸發音效的爵士鼓應用程式。
+    - 02 - JS and CSS Clock: 一個時鐘應用程式，使用 JavaScript 控制指針的轉動。
   03 - CSS Variables: 使用 CSS 變數實現動態更新效果。
   04 - Array Cardio Day 1: JavaScript 陣列方法練習。
   05 - Flex Panel Gallery: 使用 Flexbox 創建的圖片展示應用程式。
