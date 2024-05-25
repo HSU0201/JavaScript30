@@ -34,8 +34,6 @@
 - [29 - Countdown Timer](29-Countdown-Timer): 倒計時計時器的應用程式。
 - [30 - Whack A Mole](30-Whack-A-Mole): 打地鼠遊戲的應用程式。
 
-...（繼續列出其他專案）
-
 ## 使用技術
 
 - HTML
