@@ -3,6 +3,7 @@
 這是我根據[JavaScript 30 天挑戰](https://javascript30.com/)所完成的一系列小作品。在這個挑戰中，我通過純JavaScript完成一個小項目，並且不使用任何框架或庫。
 
 ## 專案列表
+
 - [01 - JavaScript Drum Kit]: 使用鍵盤觸發音效的爵士鼓應用程式。
 - [02 - JS and CSS Clock]: 一個時鐘應用程式，使用 JavaScript 控制指針的轉動。
 - [03 - CSS Variables]: 使用 CSS 變數實現動態更新效果。
