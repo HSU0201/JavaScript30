@@ -3,16 +3,16 @@
 這是我根據[JavaScript 30 天挑戰](https://javascript30.com/)所完成的一系列小作品。在這個挑戰中，我通過純JavaScript完成一個小項目，並且不使用任何框架或庫。
 
 ## 專案列表
-- [01 - JavaScript Drum Kit](01-JavaScript-Drum-Kit): 使用鍵盤觸發音效的爵士鼓應用程式。
-- [02 - JS and CSS Clock](02-JS-and-CSS-Clock): 一個時鐘應用程式，使用 JavaScript 控制指針的轉動。
-- [03 - CSS Variables](03-CSS-Variables): 使用 CSS 變數實現動態更新效果。
-- [04 - Array Cardio Day 1](04-Array-Cardio-Day-1): JavaScript 陣列方法練習。
-- [05 - Flex Panel Gallery](05-Flex-Panel-Gallery): 使用 Flexbox 創建的圖片展示應用程式。
-- [06 - Type Ahead](06-Type-Ahead): 實時搜尋城市和州名的應用程式。
-- [07 - Array Cardio Day 2](07-Array-Cardio-Day-2): 更多 JavaScript 陣列方法練習。
-- [08 - Fun with HTML5 Canvas](08-Fun-with-HTML5-Canvas): 在 HTML5 Canvas 上繪製彩色圖案的應用程式。
-- [09 - Dev Tools Domination](09-Dev-Tools-Domination): 探索 Chrome 開發者工具的使用方法。
-- [10 - Hold Shift and Check Checkboxes](10-Hold-Shift-and-Check-Checkboxes): 實現按住 Shift 鍵多選功能的應用程式。
+- [01 - JavaScript Drum Kit]: 使用鍵盤觸發音效的爵士鼓應用程式。
+- [02 - JS and CSS Clock]: 一個時鐘應用程式，使用 JavaScript 控制指針的轉動。
+- [03 - CSS Variables]: 使用 CSS 變數實現動態更新效果。
+- [04 - Array Cardio Day 1]: JavaScript 陣列方法練習。
+- [05 - Flex Panel Gallery]: 使用 Flexbox 創建的圖片展示應用程式。
+- [06 - Type Ahead]: 實時搜尋城市和州名的應用程式。
+- [07 - Array Cardio Day 2]: 更多 JavaScript 陣列方法練習。
+- [08 - Fun with HTML5 Canvas]: 在 HTML5 Canvas 上繪製彩色圖案的應用程式。
+- [09 - Dev Tools Domination]: 探索 Chrome 開發者工具的使用方法。
+- [10 - Hold Shift and Check Checkboxes]: 實現按住 Shift 鍵多選功能的應用程式。
 - [11 - Custom Video Player](11-Custom-Video-Player): 自定義視頻播放器的應用程式。
 - [12 - Key Sequence Detection](12-Key-Sequence-Detection): 檢測特定按鍵序列的應用程式。
 - [13 - Slide in on Scroll](13-Slide-in-on-Scroll): 捲動時圖片滑入效果的應用程式。
