@@ -92,7 +92,7 @@ var days = [
       "https://github.com/HSU0201/JavaScript30/tree/main/08-FunwithHTML5Canvas",
     image:
       "https://github.com/HSU0201/JavaScript30/blob/main/img/08.png?raw=true",
-    gif: "",
+    gif: "https://github.com/HSU0201/JavaScript30/blob/main/img/08.gif?raw=true",
   },
   {
     no: "Day09",
@@ -372,7 +372,8 @@ function createView(e) {
                   <div class="tag-day">${day.no}</div>
                 </div>
                 <div class="img-box">
-                <div id="loading" class=""></div>
+                  <div id="loading"></div>
+                  <div id="noGif"></div>
                   <img
                   class="img"
                   src="${day.image}"
@@ -403,20 +404,26 @@ function createView(e) {
 
 function changeImageType(e) {
   const card = e.currentTarget;
+  const noGif = card.querySelector("#noGif");
   const img = card.querySelector(".img");
   const gifSrc = card.dataset.gif;
   const imgSrc = card.dataset.img;
   const loading = card.querySelector("#loading");
-  if (e.type === "mouseenter" && gifSrc) {
-    loading.classList.add("loader");
-    img.src = gifSrc;
-    img.onload = () => {
-      setTimeout(() => {
-        loading.classList.remove("loader");
-      }, 1000);
-    };
+  if (e.type === "mouseenter") {
+    if (gifSrc) {
+      loading.classList.add("loader");
+      img.src = gifSrc;
+      img.onload = () => {
+        setTimeout(() => {
+          loading.classList.remove("loader");
+        }, 1000);
+      };
+    } else {
+      noGif.classList.add("noGif");
+    }
   } else if (e.type === "mouseleave") {
     loading.classList.remove("loader");
+    noGif.classList.remove("noGif");
     img.src = imgSrc;
   }
 }

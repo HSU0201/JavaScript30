@@ -38,6 +38,8 @@
         }
     }
 
+
+
     .header-p {
         color: rgb(0, 0, 0);
         width: 95%;
@@ -109,12 +111,27 @@
 
         .img-box {
             width: 100%;
-            height: 250px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .noGif::before {
+            position: absolute;
+            top: 0;
+            right: 0;
+            content: "無影片，需使用console與程式搭配";
+            color: var(--sec-color);
+            background-color: var(--white-color);
+            padding: 5px;
+            border-radius: 0 0 0 10px;
+            font-family: 'Courier New', Courier, monospace;
         }
 
         .img {
             width: 100%;
+            height: 100%;
             border-radius: var(--border-radius) var(--border-radius) 0 0;
+            object-fit: cover;
         }
 
         .card-text {
@@ -283,35 +300,53 @@
     align-items: center;
 }
 
-/* HTML: <div class="loader"></div> */
 .loader {
     position: absolute;
     top: 25%;
     left: calc(50% - 50px);
     width: 100px;
     height: 40px;
-    --g: radial-gradient(farthest-side,#0000 calc(95% - 3px),var(--theme-color) calc(100% - 3px) 98%,#0000 101%) no-repeat;
+    --g: radial-gradient(farthest-side, #0000 calc(95% - 3px), var(--theme-color) calc(100% - 3px) 98%, #0000 101%) no-repeat;
     background: var(--g), var(--g), var(--g);
     background-size: 30px 30px;
     animation: l9 1s infinite alternate;
-  }
-  @keyframes l9 {
+}
+
+
+
+@keyframes l9 {
     0% {
-      background-position: 0 50%, 50% 50%, 100% 50%;
+        background-position: 0 50%, 50% 50%, 100% 50%;
     }
+
     20% {
-      background-position: 0 0, 50% 50%, 100% 50%;
+        background-position: 0 0, 50% 50%, 100% 50%;
     }
+
     40% {
-      background-position: 0 100%, 50% 0, 100% 50%;
+        background-position: 0 100%, 50% 0, 100% 50%;
     }
+
     60% {
-      background-position: 0 50%, 50% 100%, 100% 0;
+        background-position: 0 50%, 50% 100%, 100% 0;
     }
+
     80% {
-      background-position: 0 50%, 50% 50%, 100% 100%;
+        background-position: 0 50%, 50% 50%, 100% 100%;
     }
+
     100% {
-      background-position: 0 50%, 50% 50%, 100% 50%;
+        background-position: 0 50%, 50% 50%, 100% 50%;
     }
-  }
+}
+
+@media (max-width: 725px) {
+
+    .header-title {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto auto auto;
+        justify-items: center;
+        text-align: center;
+        padding-top: 30px;
+    }
+}
