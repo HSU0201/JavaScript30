@@ -372,6 +372,7 @@ function createView(e) {
                   <div class="tag-day">${day.no}</div>
                 </div>
                 <div class="img-box">
+                <div id="loading" class=""></div>
                   <img
                   class="img"
                   src="${day.image}"
@@ -405,9 +406,17 @@ function changeImageType(e) {
   const img = card.querySelector(".img");
   const gifSrc = card.dataset.gif;
   const imgSrc = card.dataset.img;
+  const loading = card.querySelector("#loading");
   if (e.type === "mouseenter" && gifSrc) {
+    loading.classList.add("loader");
     img.src = gifSrc;
+    img.onload = () => {
+      setTimeout(() => {
+        loading.classList.remove("loader");
+      }, 1000);
+    };
   } else if (e.type === "mouseleave") {
+    loading.classList.remove("loader");
     img.src = imgSrc;
   }
 }

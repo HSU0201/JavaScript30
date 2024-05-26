@@ -24,8 +24,8 @@ function getVideo() {
     });
 }
 
-// 取得視訊資料並輸出在cavas中
-function paintToCanavas() {
+// 取得視訊資料並輸出在canvas中
+function paintToCanvas() {
   // 設置寬高
   const width = video.videoWidth;
   const height = video.videoHeight;
@@ -39,8 +39,8 @@ function paintToCanavas() {
     let pixels = ctx.getImageData(0, 0, width, height);
     // 製作效果
     // pixels = redEffect(pixels); // 紅色濾鏡效果
-    // pixels = rgbSplit(pixels); // 色彩分離
-    pixels = greenScreen(pixels); // 綠幕
+    pixels = rgbSplit(pixels); // 色彩分離
+    // pixels = greenScreen(pixels); // 綠幕
     // 置入效果
     ctx.putImageData(pixels, 0, 0);
     //debugger;
@@ -94,7 +94,7 @@ function greenScreen(pixels) {
     levels[input.name] = input.value;
   });
 
-  for (i = 0; i < pixels.data.length; i = i + 4) {
+  for (let i = 0; i < pixels.data.length; i = i + 4) {
     red = pixels.data[i + 0];
     green = pixels.data[i + 1];
     blue = pixels.data[i + 2];
@@ -119,4 +119,4 @@ function greenScreen(pixels) {
 // 執行
 getVideo();
 // 可以播放時
-video.addEventListener("canplay", paintToCanavas);
+video.addEventListener("canplay", paintToCanvas);
